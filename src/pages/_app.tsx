@@ -1,10 +1,13 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { FiSettings } from "react-icons/fi";
+import { TooltipComponent } from "@syncfusion/ej2-react-popups";
+import { Layout } from "../components";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <>
+    <div className="flex relative dark:bg-main-dark-bg">
       <Head>
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -40,8 +43,21 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           }}
         />
       </Head>
-      <Component {...pageProps} />
-    </>
+      <div className="fixed right-4 bottom-4" style={{ zIndex: 1000 }}>
+        <TooltipComponent content="Settings" position="TopCenter">
+          <button
+            type="button"
+            className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
+            style={{ background: "blue", borderRadius: "50%" }}
+          >
+            <FiSettings />
+          </button>
+        </TooltipComponent>
+      </div>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </div>
   );
 }
 
