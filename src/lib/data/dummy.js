@@ -1,4 +1,3 @@
-import React from "react";
 import {
   AiOutlineAreaChart,
   AiOutlineBarChart,
@@ -31,11 +30,11 @@ import { IoMdContacts } from "react-icons/io";
 import { MdOutlineSupervisorAccount } from "react-icons/md";
 import { RiContactsLine, RiStockLine } from "react-icons/ri";
 import { TiTick } from "react-icons/ti";
-
+import("../../types/chart");
 export const gridOrderImage = (props) => (
   <div>
     <img
-      className="rounded-xl h-20 md:ml-3"
+      className="h-20 rounded-xl md:ml-3"
       src={props.ProductImage}
       alt="order-item"
     />
@@ -46,7 +45,7 @@ export const gridOrderStatus = (props) => (
   <button
     type="button"
     style={{ background: props.StatusBg }}
-    className="text-white py-1 px-2 capitalize rounded-2xl text-md"
+    className="px-2 py-1 text-white capitalize rounded-2xl text-md"
   >
     {props.Status}
   </button>
@@ -69,7 +68,7 @@ export const kanbanGrid = [
 const gridEmployeeProfile = (props) => (
   <div className="flex items-center gap-2">
     <img
-      className="rounded-full w-10 h-10"
+      className="w-10 h-10 rounded-full"
       src={props.EmployeeImage}
       alt="employee"
     />
@@ -130,9 +129,9 @@ export const EditorData = () => (
   </div>
 );
 const customerGridImage = (props) => (
-  <div className="image flex gap-4">
+  <div className="flex gap-4 image">
     <img
-      className="rounded-full w-10 h-10"
+      className="w-10 h-10 rounded-full"
       src={props.CustomerImage}
       alt="employee"
     />
@@ -144,10 +143,10 @@ const customerGridImage = (props) => (
 );
 
 const customerGridStatus = (props) => (
-  <div className="flex gap-2 justify-center items-center text-gray-700 capitalize">
+  <div className="flex items-center justify-center gap-2 text-gray-700 capitalize">
     <p
       style={{ background: props.StatusBg }}
-      className="rounded-full h-3 w-3"
+      className="w-3 h-3 rounded-full"
     />
     <p>{props.Status}</p>
   </div>
@@ -615,7 +614,7 @@ export const chatData = [
     time: "9:08 AM",
   },
   {
-    image: "/images/avatar3.jpg",
+    image: "/images/avatar3.png",
     message: "New message received",
     desc: "Salma sent you new message",
     time: "11:56 AM",
@@ -817,7 +816,7 @@ export const medicalproBranding = {
       image: "/images/avatar2.jpg",
     },
     {
-      image: "/images/avatar3.jpg",
+      image: "/images/avatar3.png",
     },
     {
       image: "/images/avatar2.jpg",
@@ -952,7 +951,7 @@ export const customersData = [
     CustomerEmail: "sunil@gmail.com",
     ProjectName: "Elite Admin",
     Status: "Active",
-    CustomerImage: "/images/avatar3.jpg",
+    CustomerImage: "/images/avatar3.png",
 
     StatusBg: "#8BE78B",
     Weeks: "11",
@@ -1017,7 +1016,7 @@ export const customersData = [
     CustomerEmail: "sunil@gmail.com",
     ProjectName: "Elite Admin",
     Status: "Active",
-    CustomerImage: "/images/avatar3.jpg",
+    CustomerImage: "/images/avatar3.png",
 
     StatusBg: "#8BE78B",
     Weeks: "11",
@@ -1082,7 +1081,7 @@ export const customersData = [
     CustomerEmail: "sunil@gmail.com",
     ProjectName: "Elite Admin",
     Status: "Active",
-    CustomerImage: "/images/avatar3.jpg",
+    CustomerImage: "/images/avatar3.png",
 
     StatusBg: "#8BE78B",
     Weeks: "11",
@@ -1147,7 +1146,7 @@ export const customersData = [
     CustomerEmail: "sunil@gmail.com",
     ProjectName: "Elite Admin",
     Status: "Active",
-    CustomerImage: "/images/avatar3.jpg",
+    CustomerImage: "/images/avatar3.png",
 
     StatusBg: "#8BE78B",
     Weeks: "11",
@@ -1212,7 +1211,7 @@ export const customersData = [
     CustomerEmail: "sunil@gmail.com",
     ProjectName: "Elite Admin",
     Status: "Active",
-    CustomerImage: "/images/avatar3.jpg",
+    CustomerImage: "/images/avatar3.png",
 
     StatusBg: "#8BE78B",
     Weeks: "11",
@@ -1277,7 +1276,7 @@ export const customersData = [
     CustomerEmail: "sunil@gmail.com",
     ProjectName: "Elite Admin",
     Status: "Active",
-    CustomerImage: "/images/avatar3.jpg",
+    CustomerImage: "/images/avatar3.png",
 
     StatusBg: "#8BE78B",
     Weeks: "11",
@@ -1342,7 +1341,7 @@ export const customersData = [
     CustomerEmail: "sunil@gmail.com",
     ProjectName: "Elite Admin",
     Status: "Active",
-    CustomerImage: "/images/avatar3.jpg",
+    CustomerImage: "/images/avatar3.png",
 
     StatusBg: "#8BE78B",
     Weeks: "11",
@@ -1407,7 +1406,7 @@ export const customersData = [
     CustomerEmail: "sunil@gmail.com",
     ProjectName: "Elite Admin",
     Status: "Active",
-    CustomerImage: "/images/avatar3.jpg",
+    CustomerImage: "/images/avatar3.png",
 
     StatusBg: "#8BE78B",
     Weeks: "11",
@@ -1461,7 +1460,7 @@ export const employeesData = [
     HireDate: "01/02/2021",
     Country: "USA",
     ReportsTo: "Carson",
-    EmployeeImage: "/images/avatar3.jpg",
+    EmployeeImage: "/images/avatar3.png",
   },
   {
     EmployeeID: 2,
@@ -1470,7 +1469,7 @@ export const employeesData = [
     HireDate: "01/02/2021",
     Country: "USA",
     ReportsTo: "Carson",
-    EmployeeImage: "/images/avatar3.jpg",
+    EmployeeImage: "/images/avatar3.png",
   },
   {
     EmployeeID: 3,
@@ -1533,7 +1532,7 @@ export const employeesData = [
     HireDate: "01/02/2021",
     Country: "USA",
     ReportsTo: "Carson",
-    EmployeeImage: "/images/avatar3.jpg",
+    EmployeeImage: "/images/avatar3.png",
   },
   {
     EmployeeID: 3,
@@ -1596,7 +1595,7 @@ export const employeesData = [
     HireDate: "01/02/2021",
     Country: "USA",
     ReportsTo: "Carson",
-    EmployeeImage: "/images/avatar3.jpg",
+    EmployeeImage: "/images/avatar3.png",
   },
   {
     EmployeeID: 3,
@@ -1659,7 +1658,7 @@ export const employeesData = [
     HireDate: "01/02/2021",
     Country: "USA",
     ReportsTo: "Carson",
-    EmployeeImage: "/images/avatar3.jpg",
+    EmployeeImage: "/images/avatar3.png",
   },
   {
     EmployeeID: 3,
@@ -1722,7 +1721,7 @@ export const employeesData = [
     HireDate: "01/02/2021",
     Country: "USA",
     ReportsTo: "Carson",
-    EmployeeImage: "/images/avatar3.jpg",
+    EmployeeImage: "/images/avatar3.png",
   },
   {
     EmployeeID: 3,
@@ -1785,7 +1784,7 @@ export const employeesData = [
     HireDate: "01/02/2021",
     Country: "USA",
     ReportsTo: "Carson",
-    EmployeeImage: "/images/avatar3.jpg",
+    EmployeeImage: "/images/avatar3.png",
   },
   {
     EmployeeID: 3,
@@ -1848,7 +1847,7 @@ export const employeesData = [
     HireDate: "01/02/2021",
     Country: "USA",
     ReportsTo: "Carson",
-    EmployeeImage: "/images/avatar3.jpg",
+    EmployeeImage: "/images/avatar3.png",
   },
   {
     EmployeeID: 3,
@@ -1911,7 +1910,7 @@ export const employeesData = [
     HireDate: "01/02/2021",
     Country: "USA",
     ReportsTo: "Carson",
-    EmployeeImage: "/images/avatar3.jpg",
+    EmployeeImage: "/images/avatar3.png",
   },
   {
     EmployeeID: 3,
@@ -1974,7 +1973,7 @@ export const employeesData = [
     HireDate: "01/02/2021",
     Country: "USA",
     ReportsTo: "Carson",
-    EmployeeImage: "/images/avatar3.jpg",
+    EmployeeImage: "/images/avatar3.png",
   },
   {
     EmployeeID: 3,
@@ -3061,17 +3060,6 @@ export const stackedCustomSeries = [
     background: "red",
   },
 ];
-
-export const stackedPrimaryXAxis = {
-  majorGridLines: { width: 0 },
-  minorGridLines: { width: 0 },
-  majorTickLines: { width: 0 },
-  minorTickLines: { width: 0 },
-  interval: 1,
-  lineStyle: { width: 0 },
-  labelIntersectAction: "Rotate45",
-  valueType: "Category",
-};
 
 export const stackedPrimaryYAxis = {
   lineStyle: { width: 0 },

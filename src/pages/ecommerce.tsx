@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { GoPrimitiveDot } from "react-icons/go";
-import { Button } from "../components";
-import { earningData } from "../lib/data/dummy";
+import { Button, SparkLine, Stacked } from "../components";
+import { earningData, SparklineAreaData } from "../lib/data/dummy";
 
 const Ecommerce: NextPage = () => {
   return (
@@ -87,17 +87,27 @@ const Ecommerce: NextPage = () => {
                 </p>
                 <p className="mt-1 text-gray-500">Expense</p>
               </div>
-              {/* <div className="mt-5">
+              <div className="mt-5">
                 <SparkLine
-                  currentColor="blue"
                   id="line-sparkLine"
-                  type="Line"
                   height="80px"
                   width="250px"
                   data={SparklineAreaData}
                   color="blue"
                 />
-              </div> */}
+              </div>
+              <div className="mt-10">
+                <Button
+                  color="white"
+                  bgColor="blue"
+                  text="Download Report"
+                  borderRadius="10px"
+                  size="md"
+                />
+              </div>
+            </div>
+            <div>
+              <Stacked width="320px" height="360px" />
             </div>
           </div>
         </div>
