@@ -18,7 +18,7 @@ import { ordersData, ordersGrid } from "../lib/data/dummy";
 
 const Orders: NextPage = () => {
   return (
-    <div className="p-2 m-2 bg-white md:m-10 md:p-10 rounded-3xl">
+    <div className="p-2 m-2 bg-white md:m-10 md:p-10 rounded-3xl ">
       <Header category="Page" title="Orders" />
       <GridComponent
         id="gridcomp"

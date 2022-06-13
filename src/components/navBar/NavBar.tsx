@@ -13,15 +13,16 @@ import Notification from "../notification/Notification";
 import UserProfile from "../userProfile/UserProfile";
 
 const NavBar = () => {
-  const { setActiveMenu, isClicked, handleClick } = useStateContext();
+  const { setActiveMenu, isClicked, handleClick, currentColor } =
+    useStateContext();
 
   return (
-    <div className="flex justify-between p-2 md:mx-6 relative">
+    <div className="relative flex justify-between p-2 md:mx-6">
       <NavButton
         title="Menu"
         customFn={() => setActiveMenu((prev) => !prev)}
         icon={<AiOutlineMenu />}
-        color="blue"
+        color={currentColor}
       />
 
       <div className="flex">
@@ -29,14 +30,14 @@ const NavBar = () => {
           title="Cart"
           customFn={() => handleClick("cart")}
           icon={<FiShoppingCart />}
-          color="blue"
+          color={currentColor}
         />
 
         <NavButton
           title="Chat"
           customFn={() => handleClick("chat")}
           icon={<BsChatLeft />}
-          color="blue"
+          color={currentColor}
           dotColor="#03c9d7"
         />
 
@@ -44,13 +45,13 @@ const NavBar = () => {
           title="Notification"
           customFn={() => handleClick("notification")}
           icon={<RiNotification3Line />}
-          color="blue"
+          color={currentColor}
           dotColor="#03c9d7"
         />
 
         <TooltipComponent content={"Profile"} position="BottomCenter">
           <div
-            className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
+            className="flex items-center gap-2 p-1 rounded-lg cursor-pointer hover:bg-light-gray"
             onClick={() => handleClick("userProfile")}
           >
             <Image
@@ -62,7 +63,7 @@ const NavBar = () => {
             />
             <p>
               <span className="text-gray-400 text-14">Hi,</span>
-              <span className="text-gray-400 font-bold ml-1 text-14">Mike</span>
+              <span className="ml-1 font-bold text-gray-400 text-14">Mike</span>
             </p>
             <MdKeyboardArrowDown className="text-gray-400 text-14" />
           </div>

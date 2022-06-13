@@ -6,7 +6,8 @@ import { useStateContext } from "../../hooks/useStateContext";
 import { links } from "../../lib/data/dummy";
 
 const SideBar = (): JSX.Element => {
-  const { activeMenu, setActiveMenu, screenSize } = useStateContext();
+  const { activeMenu, setActiveMenu, screenSize, currentColor } =
+    useStateContext();
 
   const activeLink =
     "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2";
@@ -21,13 +22,13 @@ const SideBar = (): JSX.Element => {
   };
 
   return (
-    <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
+    <div className="h-screen pb-10 ml-3 overflow-auto md:overflow-hidden md:hover:overflow-auto ">
       {activeMenu && (
         <>
-          <div className="flex justify-between items-center">
+          <div className="flex items-center justify-between">
             <Link href="/">
               <a
-                className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
+                className="flex items-center gap-3 mt-4 ml-3 text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
                 onClick={handleClose}
               >
                 <SiShopware />
@@ -38,7 +39,7 @@ const SideBar = (): JSX.Element => {
               <button
                 type="button"
                 onClick={() => setActiveMenu((prev) => !prev)}
-                className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block "
+                className="block p-3 mt-4 text-xl rounded-full hover:bg-light-gray "
               >
                 <MdOutlineCancel />
               </button>
@@ -47,14 +48,17 @@ const SideBar = (): JSX.Element => {
           <div className="mt-10">
             {links?.map((item) => (
               <div key={item?.title}>
-                <p className="text-gray-400 m-3 mt-4 uppercase">
+                <p className="m-3 mt-4 text-gray-400 uppercase">
                   {item?.title}
                 </p>
                 {item?.links?.map((link) => (
                   <Link href={`/${link?.name}`} key={link?.name}>
                     <a
-                      className={!activeMenu ? activeLink : normalLink}
                       onClick={handleClose}
+                      style={{
+                        backgroundColor: activeMenu ? currentColor : "",
+                      }}
+                      className={activeMenu ? activeLink : normalLink}
                     >
                       {link?.icon}
                       <span className="capitalize">{link?.name}</span>

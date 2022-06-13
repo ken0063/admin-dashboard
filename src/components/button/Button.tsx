@@ -1,9 +1,10 @@
 type Props = {
-  color: string;
-  bgColor: string;
-  text: string;
+  color?: string;
+  bgColor?: string;
+  text?: string;
   borderRadius: string;
-  size: string;
+  size?: string;
+  icon?: any;
 };
 
 const Button = ({
@@ -12,6 +13,7 @@ const Button = ({
   text,
   borderRadius,
   size,
+  icon,
 }: Props): JSX.Element => {
   return (
     <button
@@ -19,7 +21,7 @@ const Button = ({
       style={{ backgroundColor: bgColor, color, borderRadius }}
       className={`text-${size} p-3 hover:drop-shadow-xl`}
     >
-      {text}
+      {icon} {text}
     </button>
   );
 };

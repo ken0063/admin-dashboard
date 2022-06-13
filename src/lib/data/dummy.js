@@ -151,14 +151,6 @@ const customerGridStatus = (props) => (
     <p>{props.Status}</p>
   </div>
 );
-export const areaPrimaryXAxis = {
-  valueType: "DateTime",
-  labelFormat: "y",
-  majorGridLines: { width: 0 },
-  intervalType: "Years",
-  edgeLabelPlacement: "Shift",
-  labelStyle: { color: "gray" },
-};
 
 export const areaPrimaryYAxis = {
   labelFormat: "{value}%",
@@ -169,11 +161,7 @@ export const areaPrimaryYAxis = {
   minorTickLines: { width: 0 },
   labelStyle: { color: "gray" },
 };
-export const barPrimaryXAxis = {
-  valueType: "Category",
-  interval: 1,
-  majorGridLines: { width: 0 },
-};
+
 export const barPrimaryYAxis = {
   majorGridLines: { width: 0 },
   majorTickLines: { width: 0 },
@@ -349,26 +337,12 @@ export const rangeColorMapping = [
   },
 ];
 
-export const ColorMappingPrimaryXAxis = {
-  valueType: "Category",
-  majorGridLines: { width: 0 },
-  title: "Months",
-};
-
 export const ColorMappingPrimaryYAxis = {
   lineStyle: { width: 0 },
   majorTickLines: { width: 0 },
   minorTickLines: { width: 0 },
   labelFormat: "{value}°C",
   title: "Temperature",
-};
-
-export const FinancialPrimaryXAxis = {
-  valueType: "DateTime",
-  minimum: new Date("2016, 12, 31"),
-  maximum: new Date("2017, 9, 30"),
-  crosshairTooltip: { enable: true },
-  majorGridLines: { width: 0 },
 };
 
 export const FinancialPrimaryYAxis = {
@@ -378,26 +352,6 @@ export const FinancialPrimaryYAxis = {
   interval: 20,
   lineStyle: { width: 0 },
   majorTickLines: { width: 0 },
-};
-
-export const LinePrimaryXAxis = {
-  valueType: "DateTime",
-  labelFormat: "y",
-  intervalType: "Years",
-  edgeLabelPlacement: "Shift",
-  majorGridLines: { width: 0 },
-  background: "white",
-};
-
-export const LinePrimaryYAxis = {
-  labelFormat: "{value}%",
-  rangePadding: "None",
-  minimum: 0,
-  maximum: 100,
-  interval: 20,
-  lineStyle: { width: 0 },
-  majorTickLines: { width: 0 },
-  minorTickLines: { width: 0 },
 };
 
 export const customersGrid = [
@@ -612,24 +566,28 @@ export const chatData = [
     message: "Roman Joined the Team!",
     desc: "Congratulate him",
     time: "9:08 AM",
+    dotColor: "#03c9d7",
   },
   {
     image: "/images/avatar3.png",
     message: "New message received",
     desc: "Salma sent you new message",
     time: "11:56 AM",
+    dotColor: "#03c9d7",
   },
   {
     image: "/images/avatar4.jpg",
     message: "New Payment received",
     desc: "Check your earnings",
     time: "4:39 AM",
+    dotColor: "#03c9d7",
   },
   {
     image: "/images/avatar.jpg",
     message: "Jolly completed tasks",
     desc: "Assign her new tasks",
     time: "1:12 AM",
+    dotColor: "#03c9d7",
   },
 ];
 
